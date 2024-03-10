@@ -1,0 +1,387 @@
+<style>
+    /* Basic styling for a layout similar to BookMyShow's homepage */
+    .signin-block {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #ff0000; /* Red color */
+        color: #ffffff; /* White text */
+        border-radius: 5px;
+      
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .logo {
+      float: left;
+      font-size: 24px;
+    }
+    .search-bar {
+    width: 750px; 
+    height: 40px; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 20px; 
+    outline: none; 
+}
+    .search-bar input {
+      /* Add your styles here */
+      width: 80%;
+    }
+
+.search-bar:focus {
+    border-color: #007bff; 
+}
+    .main-content {
+      padding: 20px;
+    }
+    .category-section {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+    .category-title {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .movie-card {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      width: 200px;
+      text-align: center;
+    }
+    .movie-card img {
+      width: 100%;
+      height: 150px;
+    }
+    .movie-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .logo
+    {
+        width:100%;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+
+    }
+    .list1
+    {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #f5f5f5;
+    }
+    
+  </style>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+  }
+
+  .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color:grey;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+      font-size: 24px;
+      margin-top: 0;
+  }
+
+  h3 {
+      font-size: 20px;
+      margin-top: 0;
+  }
+
+  p {
+      margin-top: 5px;
+  }
+
+  .section {
+      margin-bottom: 20px;
+  }
+
+  .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .movies-list {
+      column-count: 2;
+      column-gap: 20px;
+  }
+
+  .genre-list, .language-list {
+      display: inline-block;
+      margin-right: 10px;
+  }
+  .song-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes the image round */
+            overflow: hidden; /* Hides any part of the image that extends beyond the border */
+            margin: 6px; /* Adds some margin around each image */
+            display: inline-block; /* Allows the images to be displayed in a row */
+            text-align: center; /* Centers the name text */
+        }
+
+    .song-name {
+        font-size: 0.8em; /* Sets the font size for the name */
+        margin-top: 15px; /* Adds some space between the image and the name */
+        }
+    .poster-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%; /* Makes the image round */
+            overflow: hidden; /* Hides any part of the image that extends beyond the border */
+            margin: 6px; /* Adds some margin around each image */
+            display:inline-flex; /* Allows the images to be displayed in a row */
+            text-align: center; /* Centers the name text */
+        }
+
+    .poster-name {
+        font-size: 0.8em; /* Sets the font size for the name */
+        margin-top: 25px; /* Adds some space between the image and the name */
+    }
+    .song {
+            display: grid;
+            grid-template-columns: 50px auto 100px;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc; /* Add a border between songs */
+            padding-bottom: 10px; /* Add some padding below each song */
+        }
+
+        .song img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .song-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-title {
+            font-weight: bold;
+        }
+
+        .song-artist {
+            font-style: italic;
+        }
+
+        .song-duration {
+            font-size: 0.8em;
+            color: #999;
+        }
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .song {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .song img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+    .song-details {
+        flex: 1;
+    }
+    .song-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+    }
+    .artist {
+        font-size: 16px;
+        color: #777;
+    }
+    .duration {
+        font-size: 14px;
+        color: #777;
+    }
+</style>
+<body>
+    <header class="header">
+      <div class="hamburger" onclick="myFunction(this)">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </div>
+      <img src="logo.jpeg" alt="Gaana logo" class="book" style="width: 12%;">
+      <div class="search-bar" style="display: inline-block;">
+          <input type="text" placeholder="Search for Artists, Albums, Songs...">
+          <button type="button">Search</button>
+      </div>
+      <div class="signin-block" style="display: inline-block;">
+        <a href="#" class="signin-link">Sign In/Signup</a>
+    </div>
+  </header><br>
+    <ul class="list1">
+      <li>All</li>
+      <li>Trending Songs</li>
+      <li>New Songs ⌄ </li>
+      <li>Old Songs</li>
+      <li>Moods&Genres</li> 
+      <li>Album</li>
+      <li>Top Playlist ⌄</li>
+      <li>Top Artist ⌄</li>
+      <li>Radio</li>
+      <li>Podcast</li>
+      <li>My Music ⌄</li>
+    </ul>
+    <h4>Gaana>Trending...<a href='index.htm'>New Songs</a></h4>
+        <div class="playlist-info">
+            <a href="2.html">
+            <img src="nr1.png" style="float: left; margin-right: 10px;"></a>
+            <div class="playlist-details">
+                <h1 style="display: inline;">Top 50 Movie Songs</h1><br>
+                <br><h2 style="font-weight: normal">Playlist Created By Gaana</h2>
+                <br><h2 style="display: inline;">50 Tracks</h2><br>
+                <br><h3 style="font-weight: normal;">Duration-3:00:15</h3>
+                <h3 style="color: lightcyan;"> hi </h3>
+                <h3 style="color: lightcyan;"> hello </h3>
+            </div>
+        </div>
+        <h2>Songs to be played next:</h2>
+        <ol>
+        <li class="song">
+            <span class="serial-number">1.</span>
+            <a href="2.html">
+            <img src="nr1.png" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Jai Jai Shree Ram</p>
+                <p class="artist">Saint Dr.Ram Singh</p>
+                <p class="duration">Duration: 3:36</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">2.</span>
+            <a href="2.html">
+            <img src="nr4.png" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Mast Malang Jhoom</p>
+                <p class="artist">Saint Dr.Ram Singh</p>
+                <p class="duration">Duration: 3:36</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">3.</span>
+            <a href="2.html">
+            <img src="ts2.png" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Kalaastar</p>
+                <p class="artist">Saint Dr.Ram Singh</p>
+                <p class="duration">Duration: 3:36</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">4.</span>
+            <a href="2.html">
+            <img src="ts3.png" alt="Song Image"></a>    
+            <div class="song-details">
+                <p class="song-title">Leke Prabhu ka Naam</p>
+                <p class="artist">Arman Malik</p>
+                <p class="duration">Duration: 3:36</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">5.</span>
+            <a href="2.html">
+            <img src="ts4.png" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Gaadi Kaali</p>
+                <p class="artist">Arjit Singh</p>
+                <p class="duration">Duration: 3:36</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">6.</span>
+            <a href="2.html">
+            <img src="leo.jpg" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Leo OST</p>
+                <p class="artist">Anirudh</p>
+                <p class="duration">Duration: 4:30</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">7.</span>
+            <a href="2.html">
+            <img src="jailer.jpg" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Hukum</p>
+                <p class="artist">AnirudH Ravichander</p>
+                <p class="duration">Duration:2:45</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">8.</span>
+            <a href="2.html">
+            <img src="skandha.jpg" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Gandabbai</p>
+                <p class="artist">Devi Sri Prasad</p>
+                <p class="duration">Duration: 3:25</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">9.</span>
+            <a href="2.html">
+            <img src="guntur karam.jpg" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Dum Masala</p>
+                <p class="artist">S.S Thaman</p>
+                <p class="duration">Duration: 3:06</p>
+            </div>
+        </li>
+        <li class="song">
+            <span class="serial-number">10.</span>
+            <a href="2.html">
+            <img src="saindhav.jpg" alt="Song Image"></a>
+            <div class="song-details">
+                <p class="song-title">Wrong Usuage</p>
+                <p class="artist">Venkatesh</p>
+                <p class="duration">Duration: 3:00</p>
+            </div>
+        </li>
+    </ol>
+
+    <img src="gaana1.png" alt="logo" style="display: block; margin: auto; width: 1200px; ">
+    <img src="gaana2.png" alt="logo" style="display: block; margin: auto; width: 1200px;">
+    <footer style="display: flex; justify-content: center; align-items: center;">
+        <p>&copy; 2024 Gaana. All rights reserved.</p>
+    </body>

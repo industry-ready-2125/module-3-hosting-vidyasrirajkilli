@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaana:Listen & Downlaod Music</title>
+</head>
+<body>
+    <title>My Entertainment Hub</title>
+  <title>Sign In Block</title>
+<style>
+    .signin-block {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #ff0000; /* Red color */
+        color: #ffffff; /* White text */
+        border-radius: 5px;
+      
+    }
+</style>
+<style>
+    .hamburger {
+        float:inline-end;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .change .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .change .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+</style>
+  <style>
+    /* Basic styling for a layout similar to BookMyShow's homepage */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .logo {
+      float: left;
+      font-size: 24px;
+    }
+    .search-bar {
+    width: 750px; 
+    height: 40px; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 20px; 
+    outline: none; 
+}
+    .search-bar input {
+      /* Add your styles here */
+      width: 80%;
+    }
+
+.search-bar:focus {
+    border-color: #007bff; 
+}
+    .main-content {
+      padding: 20px;
+    }
+    .category-section {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+    .category-title {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .movie-card {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      width: 200px;
+      text-align: center;
+    }
+    .movie-card img {
+      width: 100%;
+      height: 150px;
+    }
+    .movie-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .logo
+    {
+        width:100%;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+
+    }
+    .list1
+    {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #f5f5f5;
+    }
+    
+  </style>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+  }
+
+  .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color:grey;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+      font-size: 24px;
+      margin-top: 0;
+  }
+
+  h3 {
+      font-size: 20px;
+      margin-top: 0;
+  }
+
+  p {
+      margin-top: 5px;
+  }
+
+  .section {
+      margin-bottom: 20px;
+  }
+
+  .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .movies-list {
+      column-count: 2;
+      column-gap: 20px;
+  }
+
+  .genre-list, .language-list {
+      display: inline-block;
+      margin-right: 10px;
+  }
+  .song-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes the image round */
+            overflow: hidden; /* Hides any part of the image that extends beyond the border */
+            margin: 6px; /* Adds some margin around each image */
+            display: inline-block; /* Allows the images to be displayed in a row */
+            text-align: center; /* Centers the name text */
+        }
+
+    .song-name {
+        font-size: 0.8em; /* Sets the font size for the name */
+        margin-top: 15px; /* Adds some space between the image and the name */
+        }
+    .poster-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%; /* Makes the image round */
+            overflow: hidden; /* Hides any part of the image that extends beyond the border */
+            margin: 6px; /* Adds some margin around each image */
+            display:inline-flex; /* Allows the images to be displayed in a row */
+            text-align: center; /* Centers the name text */
+        }
+
+    .poster-name {
+        font-size: 0.8em; /* Sets the font size for the name */
+        margin-top: 25px; /* Adds some space between the image and the name */
+    }
+</style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .song {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .song img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        .song-details {
+            flex: 1;
+        }
+        .song-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0;
+        }
+        .artist {
+            font-size: 16px;
+            color: #777;
+        }
+        .duration {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+  <header class="header">
+    <div class="hamburger" onclick="myFunction(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <img src="logo.jpeg" alt="Gaana logo" class="book" style="width: 12%;">
+    <div class="search-bar" style="display: inline-block;">
+        <input type="text" placeholder="Search for Artists, Albums, Songs...">
+        <button type="button">Search</button>
+    </div>
+    <div class="signin-block" style="display: inline-block;">
+        <a href="#" class="signin-link">Sign In/Signup</a>
+    </div>
+  </header><br>
+  <ul class="list1">
+    <li>All</li>
+    <li>Trending Songs</li>
+    <li>New Songs ⌄ </li>
+    <li>Old Songs</li>
+    <li>Moods&Genres</li> 
+    <li>Album</li>
+    <li>Top Playlist ⌄</li>
+    <li>Top Artist ⌄</li>
+    <li>Radio</li>
+    <li>Podcast</li>
+    <li>My Music ⌄</li>
+  </ul>
+<img src="poster1.png" alt="Advertisement 1" style="width: 80%;">
+<h1 class="logo"><b>Top Charts</b></h1>
+<main class="main-content">
+    <section class="category-section">
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="tc1.png" alt="Movie 1 poster">
+                <h3>Hindi Top 50</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="tc2.png" alt="Movie 2 poster">
+                <h3>Punjabi Top 50</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="tc3.png" alt="Movie 3 poster">
+                <h3>Retro Top 50</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="tc4.png" alt="Movie 3 poster">
+                <h3>Dance Top 50</h3>
+            </a>
+        </div>
+    </section>
+</main>
+
+<h1 class="logo"><b>New Releases</b></h1>
+<main class="main-content">
+    <section class="category-section">
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="nr1.png" alt="Movie 1 poster">
+                <h3>Naina ("From Crew")</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="nr2.png" alt="Movie 1 poster">
+                <h3>5 Deadly Venomz</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="nr3.png" alt="Movie 1 poster">
+                <h3>The Ride</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="nr4.png" alt="Movie 1 poster">
+                <h3>Mast Malang Jhoom</h3>
+            </a>
+        </div>
+    </section>
+</main>
+
+<h1 class="logo"><b>City Top Charts</b></h1>
+<main class="main-content">
+    <section class="category-section">
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="ct1.png" alt="Movie 1 poster">
+                <h3>Patna Top 10</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="ct2.png" alt="Movie 1 poster">
+                <h3>Delhi Top 10</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="ct3.png" alt="Movie 1 poster">
+                <h3>Mumbai Top 10</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="ct4.png" alt="Movie 1 poster">
+                <h3>Chandigarh Top 10</h3>
+            </a>
+        </div>
+    </section>
+</main>
+<h1 class="logo"><b>Recap 2023</b></h1>
+<main class="main-content">
+    <section class="category-section">
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r1.png" alt="Movie 1 poster">
+                <h3>Hindi Top 100-2023</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r2.png" alt="Movie 1 poster">
+                <h3>Punjabi Top 100-2023</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r3.png" alt="Movie 1 poster">
+                <h3>International Top 100</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r4.png" alt="Movie 1 poster">
+                <h3>Romance Top 100-2023</h3>
+            </a>
+        </div>
+    </section>
+    <section class="category-section">
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r5.png" alt="Movie 1 poster">
+                <h3>Punjabi Romance</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r6.png" alt="Movie 1 poster">
+                <h3>English Romantic..</h3>
+            </a>
+        </div>
+        <div class="movie-card">
+            <a href="1.html">
+                <img src="r7.png" alt="Movie 1 poster">
+                <h3>Most Streamed Retro..</h3>
+            </a>
+        </div>
+    </section>
+</main>
+<img src="ad2.png" alt="Advertisement 2" style="width: 80%;"><br>
+<h1 class="logo"><b>Radio</b></h1>
+<div class="song-image">
+    <img src="radio1.png" alt="Song 1">
+    <div class="song-name">Love Hits</div>
+</div>
+<div class="song-image">
+    <img src="radio2.png" alt="Song 2">
+    <div class="song-name">Love Songs Punjabi</div>
+</div>
+<div class="song-image">
+    <img src="radio3.png" alt="Song 3">
+    <div class="song-name">Party Non-Stop</div>
+</div>
+<div class="song-image">
+    <img src="radio4.png" alt="Song 3">
+    <div class="song-name">90's Bollywood's</div>
+</div>
+<h1>Trending Songs</h1>
+<div class="poster-image">
+    <img src="ts1.png" alt="Song 1">
+    <div class="poster-name">Jai Jai Shri Ram</div>
+</div>
+<div class="poster-image">
+    <img src="ts2.png" alt="Song 1">
+    <div class="poster-name">Kalaastar</div>
+</div>
+<div class="poster-image">
+    <img src="ts3.png" alt="Song 1">
+    <div class="poster-name">Leke Prabhu Naa..</div>
+</div>
+<div class="poster-image">
+    <img src="ts4.png" alt="Song 1">
+    <div class="poster-name">Gandi Kaali</div>
+</div>
+<h1>Gaana Party Zone</h1>
+<div class="movie-card">
+    <a href="1.html">
+        <img src="gp1.png" alt="Movie 1 poster">
+        <h3>Ultimate Remixes</h3>
+    </a>
+</div>
+<div class="movie-card">
+    <a href="1.html">
+        <img src="gp2.png" alt="Movie 1 poster">
+        <h3>Nacho Saare</h3>
+    </a>
+</div>
+<div class="movie-card">
+    <a href="1.html">
+        <img src="gp3.png" alt="Movie 1 poster">
+        <h3>Rok Sako To Rok..</h3>
+    </a>
+</div>
+<div class="movie-card">
+    <a href="1.html">
+        <img src="gp4.png" alt="Movie 1 poster">
+        <h3>Car O Bar</h3>
+    </a>
+</div>
+    <img src="gaana1.png" alt="logo" style="display: block; margin: auto; width: 1200px; ">
+    <img src="gaana2.png" alt="logo" style="display: block; margin: auto; width: 1200px;">
+    <footer style="display: flex; justify-content: center; align-items: center;">
+        <p>&copy; 2024 Gaana. All rights reserved.</p>
+    </footer>
+</body>
+</html>
